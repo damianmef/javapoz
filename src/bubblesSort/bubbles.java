@@ -48,7 +48,7 @@ public class bubbles {
         boolean zamiana=true;
         while (zamiana) {
             zamiana = false;
-            while (n > 1) {
+            while (n > 0) {
                 if (tab[n] < tab[n - 1]) {
                     int temp = tab[n];
                     tab[n] = tab[n - 1];
