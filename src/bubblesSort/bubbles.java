@@ -29,20 +29,6 @@ public class bubbles {
 
     }
 
-//    public static int[] BubbleSort(int[] arr) {
-//        int temp;
-//        for (int i = 0; i < arr.length; i++) {
-//            for (int j = 0; j < arr.length - 1; j++) {
-//                if (arr[j] > arr[j + 1]) {
-//                    temp = arr[j];
-//                    arr[j] = arr[j + 1];
-//                    arr[j + 1] = temp;
-//                }
-//            }
-//        }
-//        return arr;
-//    }
-//
     public static int[] bubbleSort(int[] tab) {
         int n=tab.length-1;
         boolean zamiana=true;
@@ -61,4 +47,18 @@ public class bubbles {
         }
         return tab;
     }
+
+    //    public static int[] BubbleSort(int[] arr) {
+//        int temp;
+//        for (int i = 0; i < arr.length; i++) {
+//            for (int j = 0; j < arr.length - 1; j++) {
+//                if (arr[j] > arr[j + 1]) {
+//                    temp = arr[j];
+//                    arr[j] = arr[j + 1];
+//                    arr[j + 1] = temp;
+//                }
+//            }
+//        }
+//        return arr;
+//    }
 }
