@@ -41,4 +41,60 @@ public class List {
         }
         return -1;
     }
+
+    public void print()
+    {
+        ListElement current = this.first;
+
+        while (current != null) {
+            System.out.println(current.getValue());
+            current = current.getNext();
+        }
+    }
+
+    public void printReverse()
+    {
+        ListElement current = this.last;
+
+        while (current != null) {
+            System.out.println(current.getValue());
+            current = current.getPrev();
+        }
+    }
+
+    public void addSorted(int el)
+    {
+        ListElement tmp = new ListElement(el);
+
+        if (this.first == null) {
+            //dodanie elementu do pustej listy
+            this.first = tmp;
+            this.last = tmp;
+        } else {
+            ListElement current = this.first;
+            boolean isAdded = false;
+
+            while (current != null && !isAdded) {
+                if (current.getValue() > tmp.getValue()) {
+                    tmp.setPrev(current.getPrev());
+                    current.setPrev(tmp);
+                    tmp.setNext(current);
+                    if (tmp.getPrev() != null) {
+                        tmp.getPrev().setNext(tmp);
+                    } else {
+                        this.first = tmp;
+                    }
+                    isAdded = true;
+                }
+
+                current = current.getNext();
+            }
+
+            if (!isAdded) {
+                tmp.setPrev(this.last);
+                this.last.setNext(tmp);
+                this.last = tmp;
+            }
+        }
+    }
 }

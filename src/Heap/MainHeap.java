@@ -2,23 +2,16 @@ package Heap;
 
 public class MainHeap {
     public static void main(String[] args) {
-        List queue = new List();
+        List list = new List();
 
-        queue.add(1);
-        queue.add(2);
-        queue.add(3);
-        queue.add(4);
-        queue.add(5);
-        queue.add(6);
-        queue.add(7);
+        list.addSorted(3);
+        list.addSorted(2);
+        list.addSorted(1);
+        list.addSorted(4);
+        list.addSorted(5);
+        list.addSorted(1);
 
-        System.out.println(queue.get());
-        System.out.println(queue.get());
-        System.out.println(queue.get());
-        System.out.println(queue.get());
-        System.out.println(queue.get());
-        System.out.println(queue.get());
-        System.out.println(queue.get());
-        System.out.println(queue.get());
+        list.print();
+//        list.printReverse();
     }
 }
