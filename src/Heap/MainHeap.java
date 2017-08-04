@@ -2,21 +2,23 @@ package Heap;
 
 public class MainHeap {
     public static void main(String[] args) {
-        Heap heap = new Heap();
+        Queue queue = new Queue();
 
-        heap.push(1);
-        heap.push(2);
-        heap.push(3);
-        heap.push(4);
-        heap.push(5);
+        queue.add(1);
+        queue.add(2);
+        queue.add(3);
+        queue.add(4);
+        queue.add(5);
+        queue.add(6);
+        queue.add(7);
 
-        System.out.println(heap.pop());
-        System.out.println(heap.pop());
-        System.out.println(heap.pop());
-        System.out.println(heap.pop());
-        System.out.println(heap.pop());
-        System.out.println(heap.pop());
-        System.out.println(heap.pop());
-        System.out.println(heap.pop());
+        System.out.println(queue.get());
+        System.out.println(queue.get());
+        System.out.println(queue.get());
+        System.out.println(queue.get());
+        System.out.println(queue.get());
+        System.out.println(queue.get());
+        System.out.println(queue.get());
+        System.out.println(queue.get());
     }
 }
