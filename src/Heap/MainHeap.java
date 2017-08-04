@@ -2,7 +2,7 @@ package Heap;
 
 public class MainHeap {
     public static void main(String[] args) {
-        Queue queue = new Queue();
+        List queue = new List();
 
         queue.add(1);
         queue.add(2);
