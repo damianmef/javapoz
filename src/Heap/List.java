@@ -97,4 +97,56 @@ public class List {
             }
         }
     }
+
+    public void sort()
+    {
+        //ustawiamy flage mowiaca o tym, ze tablica jest posortowana
+        boolean isNotSorted = true;
+
+        //sortuj tak dlugo jak lista jest nieposrotowana
+        while (isNotSorted) {
+            //wez pierwszy element listy
+            ListElement current = this.first;
+
+            //zakladam, ze lista jest posortowana
+            isNotSorted = false;
+
+            if (current != null) {
+                //wex next jako drugi element listy
+                ListElement next = current.getNext();
+
+                //rob tak dlugo jak nie ma konca listy
+                while (next != null) {
+                    //dokonaj porownania
+                    if (current.getValue() > next.getValue()) {
+                        //lista jest nieposortowana
+                        isNotSorted = true;
+
+                        //zamiana elementow
+                        next.setPrev(current.getPrev());
+                        current.setPrev(next);
+
+                        current.setNext(next.getNext());
+
+                        next.setNext(current);
+
+                        if (current.getNext() != null) {
+                            current.getNext().setPrev(current);
+                        }
+
+                        if (next.getPrev() != null) {
+                            next.getPrev().setNext(next);
+                        } else {
+                            this.first = next;
+                        }
+
+                        next = current.getNext();
+                    } else {
+                        current = current.getNext();
+                        next = next.getNext();
+                    }
+                }
+            }
+        }
+    }
 }
