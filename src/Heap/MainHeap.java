@@ -1,27 +1,27 @@
 package Heap;
 
+import java.util.Random;
+
 public class MainHeap {
     public static void main(String[] args) {
         ListMergeSort list = new ListMergeSort();
+        List listOld = new List();
 
-        list.add(4);
-        list.add(1);
-        list.add(3);
-        list.add(2);
-        list.add(3);
-        list.add(5);
-        list.add(1);
-        list.add(30);
-        list.add(5);
-        list.add(6);
+        Random rand = new Random();
+        int random = 0;
 
+        for (int i = 0; i < 10000000; i++) {
+            random = rand.nextInt(10000000);
+            list.add(random);
+            listOld.add(random);
+        }
 
-        list.print();
-
-        System.out.println("------");
+        System.out.println("------START!----");
 
         list.sort();
-        list.print();;
+        System.out.println("------SORT MERGE----");
 
+        listOld.sort();
+        System.out.println("------SORT BUBLE----");
     }
 }

@@ -87,9 +87,34 @@ public class ListMergeSort {
     public void mergeLists(ListMergeSort listToMerge)
     {
         ListElement element = null;
+        ListElement current = this.first;
 
         while ((element = listToMerge.get()) != null) {
-            this.addSorted(element);
+            boolean isAdded = false;
+
+            while (current != null && !isAdded) {
+                if (current.getValue() > element.getValue()) {
+                    element.setPrev(current.getPrev());
+                    current.setPrev(element);
+                    element.setNext(current);
+                    if (element.getPrev() != null) {
+                        element.getPrev().setNext(element);
+                    } else {
+                        this.first = element;
+                    }
+                    isAdded = true;
+                } else {
+                    current = current.getNext();
+                }
+            }
+
+            if (!isAdded) {
+                current = element;
+                element.setPrev(this.last);
+                this.last.setNext(element);
+                this.last = element;
+            }
+
         }
     }
 
