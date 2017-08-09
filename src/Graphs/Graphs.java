@@ -27,10 +27,13 @@ public class Graphs {
 //        }
 
         int n = 4;
-        int k = 4;
+        int k = 6;
         Edge[] resultGnk = generateGnk(n,k);
-        for(int i = resultGnk.length - 1; i >= resultGnk.length -k;i-- ) {
-            System.out.println(resultGnk[i].toString());
+
+        if( k <= resultGnk.length ) {
+            for (int i = resultGnk.length - 1; i >= resultGnk.length - k; i--) {
+                System.out.println(resultGnk[i].toString());
+            }
         }
     }
 
