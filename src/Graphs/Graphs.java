@@ -6,26 +6,6 @@ public class Graphs {
 
     public static void main(String[] args) {
 
-        /*
-        * Transform E to A
-        * */
-//        int n = 4;
-//        int k = 4;
-//        Edge[] resultGnk = generateGnk(n,k);
-//        boolean[][] result = transformEtoA(n, resultGnk, k);
-//
-//        for(int i =0; i < result.length; i++){
-//            System.out.println(Arrays.toString(result[i]));
-//        }
-//        for (int i = resultGnk.length - 1; i >= resultGnk.length - k; i--) {
-//            System.out.println(resultGnk[i].toString());
-//        }
-
-
-
-//
-
-
         /* Generator GNP
         *  n - liczba naturalna
         *  p - liczba pomiędzy 0 a 1
@@ -43,7 +23,20 @@ public class Graphs {
         *  n - liczba naturalna
         *  p - liczba pomiędzy 0 a 1
         *  */
-        transformAtoE(4, 0.5);
+//        transformAtoE(4, 0.5);
+
+        /*
+        * Transform E to A
+        *  n - liczba naturalna
+        *  k - liczba krawędzi
+        * */
+        transformaEtoA(4, 3);
+    }
+    public static void transformaEtoA(int n, int k) {
+        Edge[] result = GraphGnk.generateGnk(n, k);
+        PrintStructures.printE(result);
+        boolean[][] a = Transforms.transformEtoA(n, result, k);
+        PrintStructures.printA(a);
     }
 
     public static void transformAtoE(int n, double p) {

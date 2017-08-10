@@ -8,6 +8,19 @@ public class Structures {
         return a;
     }
 
+    public static EdgeV2[] generateEdgeV2Array(int n)
+    {
+        Edge[] tempResult = generateEdgeArray(n);
+        EdgeV2[] result = new EdgeV2[tempResult.length];
+        for (int i = 0; i < tempResult.length; i++) {
+            result[i].a = tempResult[i].a;
+            result[i].b = tempResult[i].b;
+            result[i].c = false;
+        }
+
+        return result;
+    }
+
     public static Edge[] generateEdgeArray(int n) {
         int h = n*(n-1)/2;
         Edge[] result = new Edge[h];
