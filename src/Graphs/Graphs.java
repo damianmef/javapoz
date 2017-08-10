@@ -1,5 +1,6 @@
 package Graphs;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 
 public class Graphs {
@@ -30,7 +31,10 @@ public class Graphs {
         *  n - liczba naturalna
         *  k - liczba krawędzi
         * */
-        transformaEtoA(4, 3);
+//        transformaEtoA(4, 3);
+
+        generateGnkV2(4,3);
+
     }
     public static void transformaEtoA(int n, int k) {
         Edge[] result = GraphGnk.generateGnk(n, k);
@@ -54,5 +58,10 @@ public class Graphs {
     public static void generateGnk(int n, int k) {
         Edge[] result = GraphGnk.generateGnk(n,k);
         PrintStructures.printE(result);
+    }
+
+    public static void generateGnkV2(int n, int k) {
+        ArrayList<EdgeV2> result = GraphGnk.generateGNKv2(n,k);
+        PrintStructures.printEV2(result);
     }
 }

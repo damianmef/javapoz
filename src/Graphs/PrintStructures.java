@@ -1,5 +1,6 @@
 package Graphs;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 
 public class PrintStructures {
@@ -16,4 +17,9 @@ public class PrintStructures {
         }
     }
 
+    public static void printEV2(ArrayList<EdgeV2> e) {
+        for (EdgeV2 item: e) {
+            System.out.println(item.toString());
+        }
+    }
 }
