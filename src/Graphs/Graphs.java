@@ -35,8 +35,15 @@ public class Graphs {
 
 //        generateGnkV2(4,3);
 
-
+        transformAtoS(4);
     }
+    public static void transformAtoS(int n) {
+        boolean[][] a = Structures.generateAArray(n);
+        StructS[] result = Transforms.transformAtoS(a, n);
+//        System.out.println(result.toString());
+        PrintStructures.printStructS(result);
+    }
+
     public static void transformaEtoA(int n, int k) {
         Edge[] result = GraphGnk.generateGnk(n, k);
         PrintStructures.printE(result);

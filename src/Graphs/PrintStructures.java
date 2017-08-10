@@ -23,7 +23,7 @@ public class PrintStructures {
         }
     }
 
-    public static void printStructS(ArrayList<StructS> s) {
+    public static void printStructS(StructS[] s) {
         for (StructS item: s) {
             System.out.println(item.toString());
         }
