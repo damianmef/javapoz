@@ -2,7 +2,13 @@ package Graphs;
 
 public class Structures {
 
-    private static Edge[] generateEdgeArray(int n) {
+    public static boolean[][] generateAArray(int n)
+    {
+        boolean[][] a = new boolean[n][n];
+        return a;
+    }
+
+    public static Edge[] generateEdgeArray(int n) {
         int h = n*(n-1)/2;
         Edge[] result = new Edge[h];
         int index = 0;
@@ -19,7 +25,7 @@ public class Structures {
         return result;
     }
 
-    private static int countEdgesInA(boolean[][] a, int n) {
+    public static int countEdgesInA(boolean[][] a, int n) {
         int result = 0;
         /* Przelatujemy po prawym górnym trójkącie w tablicy A */
         for (int i = 0; i < n - 1; i++) {

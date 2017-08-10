@@ -1,8 +1,8 @@
 package Graphs;
 
 public class GraphGnp {
-    private static boolean[][] generateGNP(int n, double p ) {
-        boolean[][] result = new boolean[n][n];
+    public static boolean[][] generateGNP(int n, double p ) {
+        boolean[][] result = Structures.generateAArray(n);
 
         for (int i = 0; i < n - 1; i++) {
             for (int j = i+1; j < n; j++) {

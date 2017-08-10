@@ -6,40 +6,6 @@ public class Graphs {
 
     public static void main(String[] args) {
 
-        // n - liczba naturalna
-        // p - liczba pomiędzy 0 a 1
-        /* Generator GNP
-         */
-//        boolean[][] result = generateGNP(4, 0.5);
-//        for(int i =0; i < result.length; i++){
-//            System.out.println(Arrays.toString(result[i]));
-//        }
-
-        /*
-            Testowe wywołanie generowania tablicy E typu Edge
-         */
-//        int n = 4;
-//        Edge[] test;
-//
-//        test = generateEdgeArray(n);
-//        for (Edge e: test) {
-//            System.out.println(e.toString());
-//        }
-
-        /*
-        Generator Gnk
-         */
-//        int n = 4;
-//        int k = 6;
-//        Edge[] resultGnk = generateGnk(n,k);
-//
-//        if( k <= resultGnk.length ) {
-//            for (int i = resultGnk.length - 1; i >= resultGnk.length - k; i--) {
-//                System.out.println(resultGnk[i].toString());
-//            }
-//        }
-
-
         /*
         * Transform E to A
         * */
@@ -56,19 +22,44 @@ public class Graphs {
 //        }
 
 
-        /* Transform A to E */
-//        int n = 4;
-//        double p = 0.5;
+
 //
-//        boolean[][] a = generateGNP(n, p);
-//        int k = countEdgesInA(a, n);
-//        Edge[] result = transformAtoE(a, n);
-//        for (int i = result.length - 1; i >= result.length - k; i--) {
-//            System.out.println(result[i].toString());
-//        }
+
+
+        /* Generator GNP
+        *  n - liczba naturalna
+        *  p - liczba pomiędzy 0 a 1
+        */
+//        generateGnp(4,0.5);
+
+        /* Generator Gnk
+        *  n - liczba naturalna
+        *  k - liczba krawędzi
+        */
+//        generateGnk(4, 3);
+
+
+        /* Transform A to E
+        *  n - liczba naturalna
+        *  p - liczba pomiędzy 0 a 1
+        *  */
+        transformAtoE(4, 0.5);
     }
 
+    public static void transformAtoE(int n, double p) {
+        boolean[][] a = GraphGnp.generateGNP(n, p);
+        PrintStructures.printA(a);
+        Edge[] e = Transforms.transformAtoE(a, n);
+        PrintStructures.printE(e);
+    }
 
+    public static void generateGnp(int n, double p) {
+        boolean[][] result = GraphGnp.generateGNP(n, p);
+        PrintStructures.printA(result);
+    }
 
-
+    public static void generateGnk(int n, int k) {
+        Edge[] result = GraphGnk.generateGnk(n,k);
+        PrintStructures.printE(result);
+    }
 }

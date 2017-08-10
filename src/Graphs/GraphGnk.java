@@ -1,8 +1,8 @@
 package Graphs;
 
 public class GraphGnk {
-    private static Edge[] generateGnk(int n, int k) {
-        Edge[] result = generateEdgeArray(n);
+    public static Edge[] generateGnk(int n, int k) {
+        Edge[] result = Structures.generateEdgeArray(n);
         int h = n*(n-1)/2;
 
         if ( k <= h ) {

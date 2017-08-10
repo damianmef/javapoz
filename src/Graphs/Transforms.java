@@ -3,9 +3,9 @@ package Graphs;
 public class Transforms {
 
 
-    private static Edge[] transformAtoE(boolean[][] a, int n) {
+    public static Edge[] transformAtoE(boolean[][] a, int n) {
         /* wygenerowanie tablicy z wszystkimi możliwymi krawędziami */
-        Edge[] result = generateEdgeArray(n);
+        Edge[] result = Structures.generateEdgeArray(n);
         /* index z którym zamieniamy daną krawędź, po każdej zamianie
         zmniejszamy go 1 = zmniejsząc zakres nieprzesuniętych elementów
          */
@@ -25,21 +25,22 @@ public class Transforms {
         return result;
     }
 
-    private static Edge[] moveItem(Edge[] result, int i, int j, int index)
+    public static Edge[] moveItem(Edge[] result, int i, int j, int index)
     {
-        for (Edge e: result) {
+        for (int k = 0; k < result.length; k++) {
             /* jeśli znajdziemy w E krawędź {i:j} */
-            if (e.a == i && e.b == j) {
+            if (result[k].a == i && result[k].b == j) {
                 /* to zamieniamy ją z ostatnim nieprzesuniętym elementem */
-                Edge temp = e;
-                e = result[index];
+                Edge temp = result[k];
+                result[k] = result[index];
                 result[index] = temp;
+                break;
             }
         }
         return result;
     }
 
-    private static boolean[][] transformEtoA(int n, Edge[] struct, int k)
+    public static boolean[][] transformEtoA(int n, Edge[] struct, int k)
     {
         boolean[][] result = new boolean[n][n];
         int h = struct.length;
