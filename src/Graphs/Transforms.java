@@ -2,6 +2,22 @@ package Graphs;
 
 public class Transforms {
 
+    public static StructS[] transformAtoS(boolean[][] a, int n) {
+        StructS[] result = new StructS[n];
+
+        for (int i = 0; i < n - 1; i++) {
+            for (int j = i + 1; j < n; j++) {
+                if(a[i][j]) {
+                    result[i].collection.add(j);
+                    result[i].counter++;
+                    result[j].collection.add(i);
+                    result[j].counter++;
+                }
+            }
+        }
+
+        return result;
+    }
 
     public static Edge[] transformAtoE(boolean[][] a, int n) {
         /* wygenerowanie tablicy z wszystkimi możliwymi krawędziami */

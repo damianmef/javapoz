@@ -22,4 +22,10 @@ public class PrintStructures {
             System.out.println(item.toString());
         }
     }
+
+    public static void printStructS(ArrayList<StructS> s) {
+        for (StructS item: s) {
+            System.out.println(item.toString());
+        }
+    }
 }

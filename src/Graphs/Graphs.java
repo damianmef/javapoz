@@ -33,7 +33,8 @@ public class Graphs {
         * */
 //        transformaEtoA(4, 3);
 
-        generateGnkV2(4,3);
+//        generateGnkV2(4,3);
+
 
     }
     public static void transformaEtoA(int n, int k) {
