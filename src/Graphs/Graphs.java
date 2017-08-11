@@ -35,7 +35,9 @@ public class Graphs {
 
 //        generateGnkV2(4,3);
 
-        transformAtoS(4);
+//        transformAtoS(4);
+
+        triangleFinder(4);
     }
     public static void transformAtoS(int n) {
         boolean[][] a = GraphGnp.generateGNP(n, 0.5);
@@ -72,5 +74,12 @@ public class Graphs {
     public static void generateGnkV2(int n, int k) {
         ArrayList<EdgeV2> result = GraphGnk.generateGNKv2(n,k);
         PrintStructures.printEV2(result);
+    }
+
+    public static void triangleFinder(int n) {
+        boolean[][] a = GraphGnp.generateGNP(n, 0.8);
+        PrintStructures.printA(a);
+        int triangles = Triangles.countTriangles(a, n);
+        PrintStructures.printString("Liczba trójkątów: " + triangles);
     }
 }
