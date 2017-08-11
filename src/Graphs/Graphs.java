@@ -37,7 +37,10 @@ public class Graphs {
 
 //        transformAtoS(4);
 
-        triangleFinder(4);
+//        triangleFinder(4);
+
+        graphDegree(12);
+
     }
     public static void transformAtoS(int n) {
         boolean[][] a = GraphGnp.generateGNP(n, 0.5);
@@ -81,5 +84,13 @@ public class Graphs {
         PrintStructures.printA(a);
         int triangles = Triangles.countTriangles(a, n);
         PrintStructures.printString("Liczba trójkątów: " + triangles);
+    }
+
+    public static void graphDegree(int n) {
+        boolean[][] a = GraphGnp.generateGNP(n, 0.8);
+        StructS[] s = Transforms.transformAtoS(a, n);
+        PrintStructures.printStructS(s);
+        int result = Degrees.getGraphDegree(s);
+        PrintStructures.printString(Integer.toString(result));
     }
 }
