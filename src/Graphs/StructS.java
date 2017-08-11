@@ -2,7 +2,7 @@ package Graphs;
 
 import java.util.ArrayList;
 
-public class StructS {
+public class StructS implements Cloneable {
     public ArrayList<Integer> collection;
     public int counter;
 
