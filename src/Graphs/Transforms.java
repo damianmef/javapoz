@@ -5,6 +5,11 @@ public class Transforms {
     public static StructS[] transformAtoS(boolean[][] a, int n) {
         StructS[] result = new StructS[n];
 
+        for(int i = 0; i < n; i++) {
+            StructS tempItem = new StructS();
+            result[i] = tempItem;
+        }
+
         for (int i = 0; i < n - 1; i++) {
             for (int j = i + 1; j < n; j++) {
                 if(a[i][j]) {

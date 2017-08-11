@@ -38,7 +38,8 @@ public class Graphs {
         transformAtoS(4);
     }
     public static void transformAtoS(int n) {
-        boolean[][] a = Structures.generateAArray(n);
+        boolean[][] a = GraphGnp.generateGNP(n, 0.5);
+        PrintStructures.printA(a);
         StructS[] result = Transforms.transformAtoS(a, n);
 //        System.out.println(result.toString());
         PrintStructures.printStructS(result);
