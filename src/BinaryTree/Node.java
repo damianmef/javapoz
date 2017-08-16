@@ -31,7 +31,7 @@ public class Node {
             temp += ", left: "+left;
         }
 
-        return temp;
+        return temp + "\n";
     }
 
     public int getKey() {

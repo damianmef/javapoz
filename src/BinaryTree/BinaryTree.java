@@ -3,18 +3,69 @@ package BinaryTree;
 public class BinaryTree {
     public static void main(String[] args) {
 
-        Node firstNode = randomBinaryTree(6, 100, 0.5);
-        System.out.println("Preorder");
-		preorder(firstNode);
-		System.out.println("Inorder");
-		inorder(firstNode);
-		System.out.println("Postorder");
-		postorder(firstNode);
+//        Node firstNode = randomBinaryTree(50, 500, 1);
+//        System.out.println("Preorder");
+//		preorder(firstNode);
+//		System.out.println("Inorder");
+//		inorder(firstNode);
+//		System.out.println("Postorder");
+//		postorder(firstNode);
+//        System.out.println(findInTree(5, firstNode));
+        System.out.println(setBalancedTree(10, 100).toString());
+    }
 
+    public static Node setBalancedTree(int n, int z) {
+        Node tree = new Node();
+
+        int nLeft = 0;
+        int nRight = 0;
+        if (n > 0) {
+            nLeft = n /2;
+            nRight = n - nLeft -1;
+
+            int x = (int)(Math.random() *z);
+            tree.setKey(x);
+            tree.setLeft(setBalancedTree(nLeft, z));
+            tree.setRight(setBalancedTree(nRight, z));
+
+        }
+
+        return tree;
+    }
+
+    public static int getTreeHeight(Node node){
+        if(node == null) {
+            return 0;
+        } else {
+            int leftHeight = getTreeHeight(node.getLeft());
+            int rightHeight = getTreeHeight(node.getRight());
+            if (leftHeight > rightHeight) {
+                return leftHeight+1;
+            } else {
+                return rightHeight+1;
+            }
+        }
+    }
+
+    public static boolean findInTree(int x, Node node) {
+        boolean isInTree = false;
+        if(node != null) {
+            if(x == node.getKey()) {
+                isInTree = true;
+            } else {
+                isInTree = findInTree(x, node.getLeft());
+                if(!isInTree) {
+                    isInTree = findInTree(x, node.getRight());
+                }
+            }
+        }
+        return isInTree;
     }
 
     public static void preorder(Node node) {
+        /* Jeśli element nie jest pusty */
         if (node != null) {
+            /* wyświetl korzeń, lewe poddrzewo, prawe poddrzewo*/
             System.out.println(node.getKey());
             preorder(node.getLeft());
             preorder(node.getRight());
@@ -23,6 +74,7 @@ public class BinaryTree {
 
     public static void inorder(Node node) {
         if (node != null) {
+            /* wyświetl lewe poddrzewo, korzeń, prawe poddrzewo*/
             inorder(node.getLeft());
             System.out.println(node.getKey());
             inorder(node.getRight());
@@ -32,6 +84,7 @@ public class BinaryTree {
     public static void postorder(Node node)
     {
         if (node != null) {
+            /* wyświetl lewe poddrzewo, prawe poddrzewo, korzeń */
             postorder(node.getLeft());
             postorder(node.getRight());
             System.out.println(node.getKey());
