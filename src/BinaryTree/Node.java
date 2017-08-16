@@ -1,26 +1,37 @@
 package BinaryTree;
 
 public class Node {
+    private int id;
     private int key;
     private Node right;
     private Node left;
 
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
     @Override
     public String toString() {
 
-        String temp = "";
+        String temp = "Node: " + this.key +" key:" + this.id ;
         int leftInt = 0;
         int rightInt = 0;
 
         if(this.right != null) {
             rightInt = right.key;
+            temp += ", right: " + right;
         }
 
         if(this.left != null) {
             leftInt = left.key;
+            temp += ", left: "+left;
         }
 
-        return "Node: " + this.key + ", right: " + right + ", left: " + left;
+        return temp;
     }
 
     public int getKey() {
