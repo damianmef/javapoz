@@ -10,7 +10,7 @@ public class HeapOnArray {
 
     public void push(int el)
     {
-        this.heap[this.counter] = el;
+        this.heap[this.el2] = el;
         this.counter++;
 
     }
