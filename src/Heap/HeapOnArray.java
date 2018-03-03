@@ -17,6 +17,10 @@ public class HeapOnArray {
     public int pop()
     {
 
+
+
+
+
             this.counter--;
             return this.heap[this.counter];
 
