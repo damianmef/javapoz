@@ -12,6 +12,7 @@ public class HeapOnArray {
     {
         this.heap[this.counter] = el;
         this.counter++;
+
     }
 
     public int pop()
