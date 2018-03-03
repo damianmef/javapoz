@@ -81,6 +81,15 @@ public class BinaryTree {
         }
     }
 
+    public static void postorder(Node node) {
+        if (node != null) {
+            /* wyświetl lewe poddrzewo, korzeń, prawe poddrzewo*/
+            inorder(node.getLeft());
+            System.out.println(node.getKey());
+            inorder(node.getRight());
+        }
+    }
+
     public static void postorder(Node node)
     {
         if (node != null) {
